@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  enc-dec-api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    container_name: enc-dec-api
+
+volumes:
+  enc-dec-data:
